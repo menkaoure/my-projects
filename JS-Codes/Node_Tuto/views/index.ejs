@@ -1,0 +1,87 @@
+<!doctype html ">
+<html >
+<head>
+	<meta charset="utf-8" />
+	<link href="/css/style.css" rel="stylesheet" media="screen" />
+	<title>No.1 :: CSS Template :: XTML 1.0 Transitional</title>
+</head>
+<body>
+<div id="container">
+	<div id="banner" >
+ 		<h1>service for a better code</h1>
+	</div>
+
+	<div id="left">
+		<h2>Login</h2>
+		<div id="login_form">
+		<form action="/todo/login" method="post">
+			<fieldset>
+				<!--<legend>Login Form</legend>-->
+				<label for="name">Name : </label>
+				<input type="text" name="username" id="username" />
+				<label for="pswd">Password : </label>
+				<input type="password" name="password" id="password" />
+				<input type="submit" value="Login" />
+			</fieldset>
+		</form>
+		no account? <a href="/signup">sign up!</a>
+		</div>
+		
+	</div>
+
+	<div id="content">
+	    <% if(authenticated) { %>
+        	<span id="welcome_msg">
+        		Welcome <%= actual_user %> !
+        	</span>
+        	<span>
+        		<a href="/logout">logout</a>
+        	</span>
+
+        	<h2><%= page_title %></h2>
+        	<ul>
+        		<% for(var i = 0, len = tasks.length; i < len; i++) { %>
+        			<li>
+        				<a href="#" class="delete_lnk">x</a>
+        				<%= tasks[i] %>
+        			</li>
+        		<% } %>
+        	</ul>
+        	<form id="task_form">
+        		<label for="task_description">Que dois-je faire?</label>
+        		<input type="text" id="task_description" />
+        		<input type="submit" value="Valider" />
+        	</form>
+        <% } else if(signup) {%>	
+        	<h2><%= page_title %></h2>
+        	<form id="signup_form">
+        		<fieldset>
+	        		<label for="email">Email:</label>
+	        		<input type="text" id="email" /> <br/>
+	        		<label for="pseudo">Pseudo:</label>
+	        		<input type="text" id="pseudo" /> <br/>
+	        		<label for="password">Password:</label>
+	        		<input type="password" id="password" /> <br/>
+	        		<label for="password2">Repeat Password:</label>
+	        		<input type="password" id="password2" /> <br/>
+	        		<input type="submit" value="Cancel">
+	        		<input type="submit" value="SignUp">
+        		</fieldset>
+        	</form>
+	    <% } else {%>
+			<h2><%= page_title %></h2>
+			<p>All templates are XHTML 1.0 and CSS2/ tableless.<br />
+			This Template has been tested on the following Browser: <br />
+			<b>MAC</b> Safari, Opera6.3 Opera8.5, Mozilla, Firefox, IE 
+			<br /><b>PC:</b> IE 6, Firefox <br />
+			<b>Linux:</b> Konqueror, Firefox</p>
+			
+			<p>The <code>content</code>-div has a left margin. Setting a <code>min-height</code> assures that the content area is always higher than the navigation.</p>
+			<p>IE on MAC doesn't interprets <code>min-height</code>. The dynamic properties (i.e. <code>expression</code>) used in explorer are proprietary by Microsoft. This prevents the css from validating according to W3C.<br />	
+		<% } %>	
+	</div>
+
+ 	<div id="footer"><h1>in valid code we trust (*^_^*) miss monorom</h1></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+	"name": "todolist",
+	"version": "0.1.0",
+	"dependencies": {
+		"express": "~3.2.1",
+		"ejs": "~0.8.3",
+		"passport": " x.x.x",
+		"passport-local": "x.x.x",
+		"connect-flash": "x.x.x"
+	},
+	"autor": "Lucky Luke <lucky7luke@gmail.com>",
+	"description": "Basic todolist"
+}

@@ -1,0 +1,16 @@
+<h1><%= title %></h1>
+
+<ul>
+	<% for(var i=0; i<tasks.length; i++) { %>
+		<li>
+			<a href="#" class="delete_lnk"><strong>x</strong></a>
+			<%= tasks[i] %>
+		</li>
+	<% } %>
+</ul>
+<form id="task_form">
+	<label for="task_description">Que dois-je faire?</label>
+	<input type="text" id="task_description" />
+	<input type="submit" value="Valider" />
+</form>
+	
